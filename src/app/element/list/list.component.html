@@ -1,0 +1,23 @@
+<h4>Todo Lists</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider" *ngFor="let todo of todos; index as i">
+        <tr>
+            <td><input type="checkbox" class="me-2" (click)="onDone(todo)" [checked]="!todo.active"></td>
+            <td [ngClass]="{'strike': !todo.active}">{{todo.title}}</td>
+            <td [ngClass]="{'strike': !todo.active}">{{todo.desc}}</td>
+            <td>
+                <button class="btn btn-sm btn-danger me-2" (click)="ondelete(todo)"><fa-icon
+                        [icon]="faTrash"></fa-icon></button>
+                <button class="btn btn-sm btn-primary"><fa-icon [icon]="faEdit" (click)="onUpdate(todo)"></fa-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
