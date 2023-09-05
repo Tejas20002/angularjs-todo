@@ -11,7 +11,6 @@ export class AddComponent {
   desc: string
 
   @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
-  @Input() onUpdate = Function;
 
 
   onSubmit(){

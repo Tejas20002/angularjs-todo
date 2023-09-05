@@ -27,7 +27,6 @@ export class ListComponent {
   }
 
   onUpdate(todo: Todo){
-    // console.log(todo)
     this.todoUpdate.emit(todo);
   }
 }

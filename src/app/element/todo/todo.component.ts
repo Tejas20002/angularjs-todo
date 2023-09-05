@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Todo } from 'src/app/Todo';
+import { MatDialog } from '@angular/material/dialog';
+import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-todo',
@@ -10,7 +12,7 @@ export class TodoComponent {
   todos: Todo[];
   localItem: string | null;
   @Output() todosUpdate: EventEmitter<Todo> = new EventEmitter();
-  constructor(){
+  constructor(private dialogRef: MatDialog){
     this.localItem = localStorage.getItem("todolist")
     if(this.localItem == null)
       this.todos = [];
@@ -38,8 +40,12 @@ export class TodoComponent {
     localStorage.setItem("todolist", JSON.stringify(this.todos))
   }
 
-  updateTodo(todo: Todo){
-    // console.log(todo);
-    this.todosUpdate.emit(todo);
+  openDialog(todo: Todo){
+    this.dialogRef.open(EditComponent,{
+      data: {
+        title: todo.title,
+        desc: todo.desc
+      }
+    });
   }
 }
