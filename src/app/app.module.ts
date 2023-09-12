@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './element/about/about.component';
 import { EditComponent } from './element/edit/edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DocsModule } from './docs/docs.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    DocsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
