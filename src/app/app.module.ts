@@ -13,6 +13,7 @@ import { AboutComponent } from './element/about/about.component';
 import { EditComponent } from './element/edit/edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DocsModule } from './docs/docs.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DocsModule } from './docs/docs.module';
     BrowserAnimationsModule,
     FormsModule,
     MatDialogModule,
-    DocsModule
+    DocsModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
