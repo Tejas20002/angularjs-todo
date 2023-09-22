@@ -1,14 +1,14 @@
 <div class="container">
   <h4>Todo Lists</h4>
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" #todo="ngForm">
     <div class="mb-3">
       <label for="title" class="form-label">Todo Title</label>
-      <input type="text" class="form-control" [(ngModel)]="title" name="title" id="title">
+      <input type="text" class="form-control" [(ngModel)]="title" name="title" id="title" required ngModel>
     </div>
     <div class="mb-3">
       <label for="desc" class="form-label">Todo Description</label>
-      <input type="text" class="form-control" [(ngModel)]="desc" name="desc" id="desc">
+      <input type="text" class="form-control" [(ngModel)]="desc" name="desc" id="desc" required ngModel>
     </div>
-    <button type="submit" class="btn btn-primary btn-sm">Add Todo</button>
+    <button type="submit" class="btn btn-primary btn-sm" [disabled]="!todo.valid">Add Todo</button>
   </form>
 </div>

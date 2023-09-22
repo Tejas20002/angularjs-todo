@@ -8,12 +8,13 @@ import { ListComponent } from './element/list/list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoComponent } from './element/todo/todo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './element/about/about.component';
 import { EditComponent } from './element/edit/edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DocsModule } from './docs/docs.module';
 import { StoreModule } from '@ngrx/store';
+import { LoginComponent } from './element/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StoreModule } from '@ngrx/store';
     ListComponent,
     TodoComponent,
     AboutComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     MatDialogModule,
     DocsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],

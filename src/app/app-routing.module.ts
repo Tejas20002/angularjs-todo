@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './element/todo/todo.component';
 import { AboutComponent } from './element/about/about.component';
 import { DocsComponent } from './docs/docs.component';
+import { authguardGuard } from "./authguard.guard"
+import { LoginComponent } from './element/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: TodoComponent },
+  { path: 'apps', component: TodoComponent, canActivate:[authguardGuard] },
   { path: 'about', component: AboutComponent },
-  { path: 'docs', component: DocsComponent}
+  { path: '', component: LoginComponent },
+  { path: 'docs', component: DocsComponent, canActivate:[authguardGuard]}
 ];
 
 @NgModule({

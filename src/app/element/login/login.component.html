@@ -1,0 +1,13 @@
+<div class="container-fluid my-5 mx-3" style="width: 500px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="email" name="title" id="title">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password" name="desc" id="desc">
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Login Todo</button>
+    </form>
+  </div>
